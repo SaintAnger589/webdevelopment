@@ -1,0 +1,13 @@
+<% include ./partials/header.ejs %>
+<div class="ui centered segment">
+    <image class="ui centered medium image rounded" src="<%= blog.image %>"></image>
+    <div class="content"><span><%=blog.created.toString()%></span></div>
+    <div class="description"><p><%=blog.body %></p></div>
+    <form action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+        <a class="ui orange basic button" href="/blogs/<%=blog._id%>/edit">Edit</a>
+        <button class="ui red base button">Delete</button>
+    </form>
+    
+</div>
+
+<% include ./partials/footer.ejs %>
